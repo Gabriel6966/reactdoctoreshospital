@@ -79,6 +79,11 @@ export default class MenuComponent extends Component {
                                 <NavLink className="nav-link"                                 to="/createhospital"> Nuevo Hospital</NavLink>
 
                             </li>
+                            <li className="nav-item">
+
+                                <NavLink className="nav-link"                                 to="/ejemplos"> Ejemplo de Servicio</NavLink>
+
+                            </li>
 
                             <li className="nav-item dropdown">
 
