@@ -9,7 +9,7 @@ export default class DoctoresComponent extends Component {
 
     state = {
         doctores: [],
-        detallesDoctor: []
+        detallesDoctor: null
     }
 
 
@@ -67,26 +67,26 @@ export default class DoctoresComponent extends Component {
                                         <td>{doctor.salario}</td>
                                         <td>{doctor.idHospital}</td>
                                         <td>
-                                            <button onClick={()=>this.loadDetallesDoctor(doctor.idDoctor)} className="btn btn-success">Detalles de los doctores</button>
+                                            <button onClick={() => this.loadDetallesDoctor(doctor.idDoctor)} className="btn btn-success">Detalles de los doctores</button>
                                         </td>
                                     </tr>
                                 )
                             })
                         }
-                        <tr>
-                            {this.state.detallesDoctor.map((detalles, index) => {
-                                return (
-                                    <tr key={index}>
-                                        <td>{detalles.apellido}</td>
-                                        <td>{detalles.especialidad}</td>
-                                        <td>{detalles.salario}</td>
-                                    </tr>
-                                )
-                            })}
-                        </tr>
-
                     </tbody>
                 </table>
+
+                {this.state.detallesDoctor && (
+                    <div className="card mt-3">
+                        <div className="card-body">
+                            <h3>Detalles del doctor</h3>
+                            <p>Apellido: {this.state.detallesDoctor.apellido}</p>
+                            <p>Especialidad: {this.state.detallesDoctor.especialidad}</p>
+                            <p>Salario: {this.state.detallesDoctor.salario}</p>
+                            <p>Hospital: {this.state.detallesDoctor.idHospital}</p>
+                        </div>
+                    </div>
+                )}
             </div>
         )
     }
