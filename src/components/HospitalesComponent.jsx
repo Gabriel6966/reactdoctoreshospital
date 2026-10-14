@@ -3,10 +3,12 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import Global from '../Global'
+import ServiceHospitales from '../services/ServiceHospitales'
 
 export default class HospitalesComponent extends Component {
 
-    url = Global.urlApiHospitales
+    service = new ServiceHospitales();
+
 
     state = {
 
@@ -15,22 +17,16 @@ export default class HospitalesComponent extends Component {
     }
 
     loadHospitales = () => {
-
-        let request = "webresources/hospitales";
-
-        axios.get(this.url + request).then((response) => {
-
-            console.log("Leyendo hospitales");
-
+        this.service.getHospitales().then(result => {
             this.setState({
-
-                hospitales: response.data
-
+                hospitales: result
             })
-
-        }
+        })
 
     }
+
+
+
 
     componentDidMount = () => {
 
@@ -99,5 +95,5 @@ export default class HospitalesComponent extends Component {
         )
 
     }
+}
 
-} 
