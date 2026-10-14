@@ -1,7 +1,9 @@
-let Global={
-    urlApiDoctores:"https://apidoctoresroutes2023.azurewebsites.net/",
+let Global = {
 
-    urlApiHospitales:"https://apidoctoresroutes2023.azurewebsites.net/"
+    urlApiHospitales: "https://apicrudhospital.azurewebsites.net/",
+
+    urlApiDoctores: "https://apidoctoresroutes2023.azurewebsites.net/"
+
 }
 
 export default Global;
